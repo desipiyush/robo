@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desipiyush</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body onmouseover="d()">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .demo model-viewer {
+            height: 100%;
+            width: 100%;
+        }
+
+        button {
+            border: none;
+            background: #edda73;
+            height: 40px;
+            width: 150px;
+            margin: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e75b09;
+            position: absolute;
+            top: 10%;
+            left: 40%;
+        }
+    </style>
+    <audio id="xad">
+        <source src="xad.mp3">
+    </audio>
+    <div class="demo">
+		<model-viewer id="model" src="RobotExpressive.glb" alt="A 3D model of an astronaut" skybox-image="stadium_01_4k.hdr"
+		ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" animation-name="Running" autoplay  auto-rotate camera-controls></model-viewer>
+        <!-- <model-viewer id="model" src="RobotExpressive.glb" ar ar environment-image="neutral"
+            skybox-image="stadium_01_4k.hdr" animation-name="Running" autoplay auto-rotate camera-controls>
+        </model-viewer> -->
+        <h1>New Pet In Free Fire</h1>
+        <div class="btn">
+            <button type="button" onclick="stop()">STOP</button>
+            <button type="button" onclick="run()">run</button>
+            <button type="button" onclick="wave()">wave</button>
+        </div>
+    </div>
+    <script>
+        var c = document.getElementById('model')
+        var xad = document.getElementById('xad')
+        function stop() {
+            c.animationName = 'none';
+        }
+
+        function run() {
+            c.animationName = 'Running';
+        }
+
+        function wave() {
+            c.animationName = 'Wave';
+        }
+
+        function d() {
+            xad.play();
+
+        }</script>
+</body>
+
+</html>
